@@ -46,6 +46,10 @@ h1{font-size:clamp(40px,8vw,90px);font-weight:800;line-height:1.1;margin-bottom:
 .ipval{font-family:'Press Start 2P',cursive;font-size:16px;color:var(--a);text-shadow:0 0 15px rgba(0,217,255,.5);word-break:break-all}
 .cicon{font-size:22px;color:var(--a);flex-shrink:0}
 .iphint{font-size:12px;color:var(--td);margin-top:15px;font-style:italic}
+.portbox{display:inline-flex;align-items:center;gap:12px;padding:12px 20px;background:rgba(0,183,194,.08);border:1px solid rgba(0,183,194,.3);border-radius:12px;cursor:pointer;transition:.3s;margin-top:12px;position:relative;overflow:hidden}
+.portbox:hover{transform:translateY(-2px);border-color:var(--b);box-shadow:0 8px 25px rgba(0,183,194,.25)}
+.portlabel{font-size:10px;color:var(--td);text-transform:uppercase;letter-spacing:2px;display:block;margin-bottom:2px;text-align:left}
+.portval{font-family:'Press Start 2P',cursive;font-size:14px;color:var(--b);text-shadow:0 0 12px rgba(0,183,194,.5)}
 .toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(100px);background:var(--ag);color:var(--d);padding:14px 28px;border-radius:12px;font-weight:700;transition:.3s;z-index:1000;box-shadow:0 10px 40px rgba(0,255,157,.4)}
 .toast.show{transform:translateX(-50%) translateY(0)}
 .btns{display:flex;gap:15px;flex-wrap:wrap;justify-content:center;margin-top:30px}
@@ -166,7 +170,11 @@ footer p{color:var(--td);font-size:13px;margin-bottom:20px}
       <div><span class="iplabel">IP Server Bedrock</span><span class="ipval">zaymc.dnipo.fun</span></div>
       <div class="cicon">📋</div>
     </div>
-    <p class="iphint">Port: <strong style="color:var(--a)">25371</strong> (dán vào ô Port khi thêm server)</p>
+    <div class="portbox" onclick="copyIP('25371')">
+      <div><span class="portlabel">Port</span><span class="portval">25371</span></div>
+      <div class="cicon" style="font-size:18px">📋</div>
+    </div>
+    <p class="iphint">Dán IP vào ô "Server Address", Port vào ô "Port" khi thêm server</p>
   </div>
   <div class="btns">
     <a href="https://discord.gg/7PDHeGmXmA" target="_blank" rel="noopener noreferrer" class="btn bd">💬 Discord</a>
@@ -269,7 +277,7 @@ footer p{color:var(--td);font-size:13px;margin-bottom:20px}
         <h3>🎯 Chọn lần đầu</h3>
         <ul>
           <li><strong>Miễn phí 1 lần duy nhất</strong></li>
-          <li>Dùng lệnh: <code>/races</code></li>
+          <li>Dùng lệnh: <code>/race</code></li>
           <li>Chọn tộc → menu nghề tự mở → chọn nghề</li>
           <li>Chưa chọn xong sẽ bị khóa di chuyển và nhắc mỗi 15 giây</li>
         </ul>
@@ -295,10 +303,8 @@ footer p{color:var(--td);font-size:13px;margin-bottom:20px}
         </div>
         <h3>📜 Lệnh người chơi</h3>
         <ul>
-          <li><code>/races</code> — Mở menu chọn tộc</li>
-          <li><code>/races list</code> — Danh sách tộc</li>
-          <li><code>/races info &lt;tộc&gt;</code> — Thông tin 1 tộc</li>
-          <li><code>/language &lt;en|ru&gt;</code> — Đổi ngôn ngữ</li>
+          <li><code>/race</code> — Mở menu chọn tộc</li>
+          <li><code>/race info</code> — Danh sách tộc</li>
         </ul>
         <div class="hl"><p>💡 Một số item đặc biệt yêu cầu đúng tộc mới dùng được skill. Sai tộc vẫn cầm được nhưng không kích hoạt ability, có thể bị tháo khỏi ô đồ.</p></div>
       </div>
@@ -310,7 +316,7 @@ footer p{color:var(--td);font-size:13px;margin-bottom:20px}
         <p>Server có hệ thống bảo vệ đất giúp chống grief. Chỉ claim được ở <strong>Overworld</strong>. Nether và End <strong>KHÔNG</strong> claim được.</p>
         <h3>🎒 Chuẩn bị</h3>
         <ul>
-          <li>Lấy xẻng vàng: <code>/kit claim</code> (hoặc craft: 1 gậy + 2 vàng)</li>
+          <li>Lấy xẻng vàng: <code>/kit</code> (hoặc craft: 1 gậy + 2 vàng)</li>
           <li><strong>Xẻng vàng</strong> = công cụ claim</li>
           <li><strong>Gậy</strong> = công cụ kiểm tra claim</li>
         </ul>
@@ -320,11 +326,10 @@ footer p{color:var(--td);font-size:13px;margin-bottom:20px}
           <li><strong>Bước 2:</strong> Chuột phải vào 2 góc đối diện của khu đất muốn claim</li>
           <li><strong>Bước 3:</strong> Xong! Đất thuộc về bạn</li>
         </ul>
-        <p>Mỗi block claim tốn 1 claim block. Xem số block còn lại: <code>/claimblocks</code></p>
+        <p>Mỗi block claim tốn 1 claim block. Số block còn lại hiển thị trực tiếp trên <strong>scoreboard</strong> góc phải màn hình.</p>
         <p>Muốn claim hình chữ nhật: chuột phải góc 1, chuột trái góc 2.</p>
         <h3>📜 Lệnh cơ bản</h3>
         <ul>
-          <li><code>/claimblocks</code> — Xem số block còn lại</li>
           <li><code>/trust &lt;tên&gt;</code> — Cho người khác xây/dùng</li>
           <li><code>/containertrust &lt;tên&gt;</code> — Cho mở rương, cửa</li>
           <li><code>/accesstrust &lt;tên&gt;</code> — Cho vào khu vực</li>
@@ -492,8 +497,12 @@ footer p{color:var(--td);font-size:13px;margin-bottom:20px}
     </div>
     <div class="panel" id="panel-2-bedrock">
       <div class="ipbox" onclick="copyIP('zaymc.dnipo.fun')">
-        <div><span class="iplabel">Bedrock IP (Port 25371)</span><span class="ipval">zaymc.dnipo.fun</span></div>
+        <div><span class="iplabel">Bedrock IP</span><span class="ipval">zaymc.dnipo.fun</span></div>
         <div class="cicon">📋</div>
+      </div>
+      <div class="portbox" onclick="copyIP('25371')">
+        <div><span class="portlabel">Port</span><span class="portval">25371</span></div>
+        <div class="cicon" style="font-size:18px">📋</div>
       </div>
     </div>
     <div class="btns">
