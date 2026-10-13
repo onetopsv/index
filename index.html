@@ -62,7 +62,6 @@ h1{font-size:clamp(40px,8vw,90px);font-weight:800;line-height:1.1;margin-bottom:
 .sv{font-size:36px;font-weight:800;color:var(--a);margin-bottom:5px}
 .sl{color:var(--td);font-size:13px;text-transform:uppercase;letter-spacing:1.5px}
 .sn{font-size:10px;color:var(--td);opacity:.7;margin-top:5px;font-style:italic}
-
 .feats{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px;max-width:1200px;margin:0 auto}
 .fc{display:block;text-decoration:none;color:inherit;background:linear-gradient(135deg,rgba(26,26,58,.8),rgba(19,19,43,.6));border:1px solid rgba(108,92,231,.2);padding:35px 25px;border-radius:18px;transition:.4s;position:relative;overflow:hidden;cursor:pointer}
 .fc::before{content:'';position:absolute;top:0;left:0;width:4px;height:0;background:linear-gradient(180deg,var(--a),var(--p));transition:.4s}
@@ -73,7 +72,6 @@ h1{font-size:clamp(40px,8vw,90px);font-weight:800;line-height:1.1;margin-bottom:
 .fi{font-size:40px;margin-bottom:20px;display:inline-block}
 .fc h3{font-size:20px;margin-bottom:12px;font-weight:700;color:var(--t)}
 .fc p{color:var(--td);font-size:14px;line-height:1.7}
-
 .jcols{display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:40px;max-width:1200px;margin:0 auto}
 .jc{background:rgba(26,26,58,.4);border:1px solid rgba(108,92,231,.2);border-radius:20px;padding:35px 30px;transition:.3s}
 .jc:hover{border-color:rgba(0,217,255,.4);box-shadow:0 15px 40px rgba(108,92,231,.2)}
@@ -90,12 +88,10 @@ h1{font-size:clamp(40px,8vw,90px);font-weight:800;line-height:1.1;margin-bottom:
 .sco h4{margin-bottom:4px;font-size:15px;font-weight:600}
 .sco p{color:var(--td);font-size:13px;line-height:1.6}
 .sco code{background:rgba(0,217,255,.15);color:var(--a);padding:2px 8px;border-radius:6px;font-family:Consolas,monospace;font-size:12px}
-
 .wtabs{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:50px;max-width:1000px;margin-left:auto;margin-right:auto}
 .wtab{padding:12px 22px;border-radius:12px;font-size:14px;font-weight:600;cursor:pointer;transition:.3s;background:rgba(26,26,58,.6);border:1px solid rgba(108,92,231,.3);color:var(--td);display:flex;align-items:center;gap:8px;user-select:none}
 .wtab:hover{border-color:var(--a);color:var(--t);transform:translateY(-2px)}
 .wpanel{display:none}
-.wpanel.active{display:block;animation:fi .4s ease}
 #w-races:checked~.wtabs label[for=w-races],
 #w-claim:checked~.wtabs label[for=w-claim],
 #w-season:checked~.wtabs label[for=w-season],
@@ -189,32 +185,32 @@ footer p{color:var(--td);font-size:13px;margin-bottom:20px}
   </div>
 
   <div class="feats">
-    <a href="#wiki" class="fc" data-wiki="" onclick="openWiki(event,'')">
+    <a href="#wiki" class="fc" onclick="openWiki(event,'')">
       <div class="fi">⚔️</div>
       <h3>Survival & PvP</h3>
       <p>Chế độ sinh tồn cổ điển kết hợp với hệ thống PvP cân bằng. Chiến đấu, xây dựng và khám phá cùng bạn bè.</p>
     </a>
-    <a href="#wiki" class="fc" data-wiki="w-races" onclick="openWiki(event,'w-races')">
+    <a href="#wiki" class="fc" onclick="openWiki(event,'w-races')">
       <div class="fi">🧬</div>
       <h3>Hệ thống chủng tộc</h3>
       <p>8 chủng tộc độc đáo (Dwarf, Angel, Demon, Orc, Elf...) kết hợp 5 nghề nghiệp riêng biệt.</p>
     </a>
-    <a href="#wiki" class="fc" data-wiki="w-season" onclick="openWiki(event,'w-season')">
+    <a href="#wiki" class="fc" onclick="openWiki(event,'w-season')">
       <div class="fi">🌍</div>
       <h3>Hệ thống mùa</h3>
       <p>4 mùa Xuân - Hạ - Thu - Đông ảnh hưởng đến nhiệt độ, cây trồng, mob và thời tiết.</p>
     </a>
-    <a href="#wiki" class="fc" data-wiki="w-claim" onclick="openWiki(event,'w-claim')">
+    <a href="#wiki" class="fc" onclick="openWiki(event,'w-claim')">
       <div class="fi">🏠</div>
       <h3>Bảo vệ đất</h3>
       <p>Bảo vệ căn cứ của bạn khỏi grief. Trust bạn bè dễ dàng để cùng xây dựng.</p>
     </a>
-    <a href="#wiki" class="fc" data-wiki="w-marry" onclick="openWiki(event,'w-marry')">
+    <a href="#wiki" class="fc" onclick="openWiki(event,'w-marry')">
       <div class="fi">💕</div>
       <h3>Kết hôn</h3>
       <p>Kết hôn trong game, nhận buff XP và hồi máu ×2 khi ở gần người ấy.</p>
     </a>
-    <a href="#wiki" class="fc" data-wiki="w-spawner" onclick="openWiki(event,'w-spawner')">
+    <a href="#wiki" class="fc" onclick="openWiki(event,'w-spawner')">
       <div class="fi">⚙️</div>
       <h3>Spawner farm</h3>
       <p>Hệ thống spawner ảo không lag, stack nhiều spawner để farm nhanh hơn.</p>
@@ -266,7 +262,7 @@ footer p{color:var(--td);font-size:13px;margin-bottom:20px}
   </div>
 
   <div class="wpanels">
-    <div class="wpanel active" id="w-races">
+    <div class="wpanel" id="w-races">
       <div class="wc">
         <h3>🧬 Tổng quan</h3>
         <p>Mỗi người chơi có <strong>1 chủng tộc</strong> và <strong>1 nghề nghiệp</strong>. Mỗi lựa chọn đều có chỉ số, kỹ năng và hạn chế riêng.</p>
